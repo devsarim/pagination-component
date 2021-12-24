@@ -1,0 +1,88 @@
+/* reset */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: inherit;
+}
+
+/* general */
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+/* pagination */
+.pages {
+  display: grid;
+  width: 50%;
+  margin: 1em auto;
+  border: 1px solid #d2d2d2;
+  padding: 1em;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.pages:hover::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #d1d1d1;
+  margin-top: 0.5em;
+  content: "\f05a  You can use arrow keys to navigate";
+}
+
+.page-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45em;
+  margin-top: 1em;
+}
+
+.page-controls button {
+  background-color: #222;
+  color: white;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.page-controls .current-page {
+  text-decoration: underline;
+}
+
+.pages-inner {
+  position: relative;
+}
+
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 100ms ease-in-out;
+  width: 100%;
+  transform: scaleY(0);
+}
+
+.page.current-page {
+  transform: scaleY(1);
+}
+
+/* extra */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: 100px;
+  gap: 1em;
+}
+
+.grid-item {
+  width: 100px;
+  height: 100px;
+  background-color: salmon;
+}
